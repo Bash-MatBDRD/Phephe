@@ -24,7 +24,7 @@ export const DiscordSimulator: React.FC<DiscordSimulatorProps> = ({
   const [userName, setUserName] = useState<string>('Membre_Community');
   const [isDeletingAnimation, setIsDeletingAnimation] = useState<boolean>(false);
   const [lastDeletedSayText, setLastDeletedSayText] = useState<string | null>(null);
-  const [isLoadingAiReply, setIsLoadingAiReply] = useState<boolean>(false);
+  const [isLoadingBotReply, setIsLoadingBotReply] = useState<boolean>(false);
   const chatEndRef = useRef<HTMLDivElement>(null);
 
   const channelsList = salons && salons.length > 0 
@@ -78,10 +78,10 @@ export const DiscordSimulator: React.FC<DiscordSimulatorProps> = ({
     // Friendly local response from Phephe Bot
     const isGreeting = /bonjour|coucou|salut|hello|bonsoir|hey|ça va|ca va/i.test(rawInput);
 
-    setIsLoadingAiReply(true);
+    setIsLoadingBotReply(true);
 
     setTimeout(() => {
-      setIsLoadingAiReply(false);
+      setIsLoadingBotReply(false);
       if (isGreeting) {
         onSendMessage(
           `Oh coucou ${userName}~ ❀ Comment s'est passée ta journée ? J'espère que tu as pu te reposer un peu~ ❀ Installe-toi bien pour le live !`,
@@ -260,7 +260,7 @@ export const DiscordSimulator: React.FC<DiscordSimulatorProps> = ({
           )}
 
           {/* Thinking Indicator */}
-          {isLoadingAiReply && (
+          {isLoadingBotReply && (
             <div className="flex items-center gap-2 text-xs text-[#8C5E5E] dark:text-[#E2BABA] italic p-2.5 bg-white dark:bg-[#1A1A18] rounded-full border border-[#D9CEBF] dark:border-white/10 w-fit shadow-sm">
               <Sparkles className="w-3.5 h-3.5 animate-spin text-[#B48A8A]" />
               <span>Phephe Bot ❀ prépare une réponse douce...</span>

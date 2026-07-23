@@ -2,5 +2,5 @@
   "name": "TikTok Community Discord Bot & Control Panel",
   "description": "Panneau de gestion et bot Discord pour communauté TikTok Live : notifications automatiques, statistiques en temps réel, simulateur de chat avec personnalité Mommy Aesthetic ❀ et commande /say.",
   "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+  "majorCapabilities": []
 }

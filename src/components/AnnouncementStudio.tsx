@@ -21,15 +21,15 @@ export const AnnouncementStudio: React.FC<AnnouncementStudioProps> = ({
   const [color, setColor] = useState<string>('#B48A8A');
   const [rolePing, setRolePing] = useState<string>('@everyone');
   const [webhookUrl, setWebhookUrl] = useState<string>(config.webhookUrl || '');
-  const [isGeneratingAi, setIsGeneratingAi] = useState<boolean>(false);
+  const [isGeneratingTemplate, setIsGeneratingTemplate] = useState<boolean>(false);
   const [webhookStatus, setWebhookStatus] = useState<{ success?: boolean; message?: string } | null>(null);
   const [isSendingWebhook, setIsSendingWebhook] = useState<boolean>(false);
 
   const handleGenerateTemplateAnnouncement = () => {
-    setIsGeneratingAi(true);
+    setIsGeneratingTemplate(true);
     setWebhookStatus(null);
     setTimeout(() => {
-      setIsGeneratingAi(false);
+      setIsGeneratingTemplate(false);
       if (announcementType === 'LIVE') {
         setDescription(
           `Coucou tout le monde~ ❀ Noxélia est actuellement en direct sur TikTok ! Venez passer un moment ultra doux et chaleureux avec nous dans le chat~ ❀\n\nLien du live : https://www.tiktok.com/@noxi_nick`
@@ -132,10 +132,10 @@ export const AnnouncementStudio: React.FC<AnnouncementStudioProps> = ({
           </div>
           <button
             onClick={handleGenerateTemplateAnnouncement}
-            disabled={isGeneratingAi}
+            disabled={isGeneratingTemplate}
             className="px-3.5 py-1.5 rounded-full bg-[#B48A8A]/15 hover:bg-[#B48A8A]/25 text-[#8C5E5E] dark:text-[#E2BABA] border border-[#B48A8A]/30 text-xs font-semibold transition-all flex items-center gap-1.5 disabled:opacity-50"
           >
-            <Sparkles className={`w-3.5 h-3.5 ${isGeneratingAi ? 'animate-spin' : ''}`} />
+            <Sparkles className={`w-3.5 h-3.5 ${isGeneratingTemplate ? 'animate-spin' : ''}`} />
             <span>Générer Modèle Phephe ❀</span>
           </button>
         </div>
