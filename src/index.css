@@ -1,0 +1,53 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
+:root {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.font-serif-aesthetic {
+  font-family: 'Instrument Serif', Georgia, serif;
+}
+
+html, body {
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+/* Day Mode explicit colors */
+html:not(.dark), body:not(.dark) {
+  background-color: #F7F3F0 !important;
+  color: #33332D !important;
+}
+
+/* Night Mode explicit colors */
+html.dark, body.dark, body.night-mode {
+  background-color: #0F0F0D !important;
+  color: #EAE3DB !important;
+}
+
+/* Custom scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(180, 138, 138, 0.3);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(180, 138, 138, 0.6);
+}
+
+
+
+
